@@ -2,12 +2,38 @@ body {
   height: 100vh;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(139,228,232);
+}
+
+#logo {
+  height: 70px;
+  border-radius: 30px;
 }
 
 a {
-  color: #00B7FF;
+  color: rgb(139,228,232);
 }
 
 #entry {
-  display: inline;
+  float: right;
+}
+
+nav {
+  background-color: rgb(86, 47, 126);
+  color: rgb(139,228,232);
+  padding: 10px;
+}
+
+#sBar {
+  position: fixed;
+  height: 100%;
+  width: 75px;
+  padding: 10px;
+  background-color: rgb(86, 47, 126);
+  text-align: center;
+}
+
+main {
+  margin-left: 100px;
+  text-align: center;
 }
