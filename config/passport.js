@@ -13,24 +13,25 @@ function(accessToken, refreshToken, profile, cb){
         if(user){
             return cb(null,user);
         } else {
-            let newUser = new User({
+            const newUser = new User({
                 name: profile.displayName,
                 email: profile.emails[0].value,
                 googleId: profile.id
             });
             newUser.save(function(err){
+                if(err) return cb(err);
                 return cb(null,newUser);
             });
         }
     })
 }));
 
-passport.serializeUser(function(id,done){
-    done(null,user.id);
+passport.serializeUser(function(user,done){
+    done(null, user.id);
 });
 
 passport.deserializeUser(function(id,done){
-    User.findById(id, function(err,user){
-        done(err,user);
+    User.findById(id, function(err, user){
+        done(err, user);
     });
 });
