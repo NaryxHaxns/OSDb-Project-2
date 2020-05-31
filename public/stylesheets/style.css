@@ -42,4 +42,16 @@ main {
   height: 100%;
   text-align: center;
   border: 2px solid rgb(86, 47, 126);
+  padding: 10px;
+}
+
+#avImg {
+  border: 3px solid rgb(86, 47, 126);
+  width: 60px;
+  border-radius: 8px;
+}
+
+#pFileHead {
+  border: 3px solid rgb(86, 47, 126);
+  padding: 10px;
 }

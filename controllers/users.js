@@ -16,6 +16,6 @@ function index(req,res,next){
 
 function show(req,res,next){
     User.findById(req.params.id), function(err,user){
-        res.render(`users/${user.googleId}`);
+        res.render(`/users/${user._id}`);
     };
 };
