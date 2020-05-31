@@ -13,7 +13,10 @@ const personSchema = new Schema({
     },
     bio: {
         type: String
-    }
+    },
+    shows: [{
+        type: String
+    }]
 }, {
     timestamps: true
 });

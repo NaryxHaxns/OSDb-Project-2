@@ -3,11 +3,28 @@
 <h1>This is the user profile page</h1>
 <main>
     <div id="pFileHead">
-    <h1><%= user.name %></h1>
-    <img id="avImg" src="" alt="User Picture">
+        <h1><%= user.name %></h1>
+        <img id="avImg" src="" alt="User Picture">
+        <p><%= user.born %></p>
     </div><br>
-    <div>
-
+    <div id="pFileBody">
+        <h3>Roles: </h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title: </th>
+                    <th>Role: </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% production.find(function(u){ %>
+                    <tr>
+                        <td><%= u.title %></td>
+                        <td><%= u. %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
     </div>
 </main>
 

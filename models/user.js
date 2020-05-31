@@ -5,7 +5,12 @@ const userSchema = new Schema({
     name: String,
     googleId: String,
     email: String,
-    avatar: String
+    avatar: String,
+    born: Date,
+    shows: [{
+        type: String,
+        ref: 'Production'
+    }]
 }, {
     timestamps: true
 });

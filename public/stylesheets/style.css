@@ -51,7 +51,7 @@ main {
   border-radius: 8px;
 }
 
-#pFileHead {
+#pFileHead, #pFileBody {
   border: 3px solid rgb(86, 47, 126);
   padding: 10px;
 }
