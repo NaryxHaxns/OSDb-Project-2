@@ -6,11 +6,11 @@ const productionSchema = new Schema({
         type: String,
         required: true
     },
-    author: {
+    playwright: {
         type: String,
         required: true
     },
-    releaseYear: {
+    debut: {
         type: Number,
         required: true
     },

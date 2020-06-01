@@ -31,14 +31,14 @@ nav {
 #sBar {
   position: fixed;
   height: 550px;
-  width: 75px;
+  width: 125px;
   padding: 10px;
   background-color: rgb(86, 47, 126);
   text-align: center;
 }
 
 main {
-  margin-left: 100px;
+  margin-left: 150px;
   height: 100%;
   text-align: center;
   border: 2px solid rgb(86, 47, 126);
@@ -54,4 +54,12 @@ main {
 #pFileHead, #pFileBody {
   border: 3px solid rgb(86, 47, 126);
   padding: 10px;
+}
+
+#addProd {
+  display: grid;
+}
+
+#syn {
+  height: 50px;
 }

@@ -2,6 +2,22 @@
 
 <main>
   <h3>Production Catalog</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Title:</th>
+        <th>Genre:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% production.forEach(function(p){ %>
+        <tr>
+          <td><a href="/production/<%= p._id %>"><%= p.title %></a></td>
+          <td><%= p.genre %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
 </main>
 
 <%- include('partials/footer') %>

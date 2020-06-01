@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<main>
+    <form id="addProd" action="/" method="POST">
+        <label>Title:</label>
+        <input type="text" name="title">
+        <label>Playwright:</label>
+        <input type="text" name="playwright">
+        <label>Debut:</label>
+        <input type="Date" name="debut">
+        <label>Genre:</label>
+        <input type="text" name="genre">
+        <label>Synopsis:</label>
+        <textarea id="syn" type="text" name="synopsis"></textarea>
+        <br>
+        <input type="submit" value="Add Production">
+    </form>
+</main>
+
+<%- include('../partials/footer') %>
