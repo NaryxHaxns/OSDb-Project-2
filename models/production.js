@@ -22,7 +22,7 @@ const productionSchema = new Schema({
     },
     cast: [{
         type: Schema.Types.ObjectId,
-        ref: 'Person'
+        ref: 'Performer'
     }]
 }, {
     timestamps: true
