@@ -1,18 +1,18 @@
 <%- include('partials/header') %>
 
 <main>
-  <h3>Production Catalog</h3>
+  <h3>Production Catalog</h3><br>
   <table>
     <thead>
       <tr>
-        <th>Title:</th>
-        <th>Genre:</th>
+        <th>Title</th>
+        <th>Genre</th>
       </tr>
     </thead>
     <tbody>
-      <% production.forEach(function(p){ %>
+      <% productions.forEach(function(p) { %>
         <tr>
-          <td><a href="/production/<%= p._id %>"><%= p.title %></a></td>
+          <td><a class="prodTitles" href="/productions/<%= p._id %>"><%= p.title %></a></td>
           <td><%= p.genre %></td>
         </tr>
       <% }); %>

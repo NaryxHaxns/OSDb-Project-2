@@ -14,7 +14,7 @@ const personSchema = new Schema({
     bio: {
         type: String
     },
-    shows: [{
+    roles: [{
         type: String
     }]
 }, {

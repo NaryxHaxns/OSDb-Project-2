@@ -1,10 +1,9 @@
 <%- include('../partials/header') %>
 
-<h1>This is the user profile page</h1>
 <main>
     <div id="pFileHead">
         <h1><%= user.name %></h1>
-        <img id="avImg" src="" alt="User Picture">
+        <img id="avImg" src="<%= user.avatar %>" alt="User Picture">
         <p><%= user.born %></p>
     </div><br>
     <div id="pFileBody">
@@ -23,7 +22,8 @@
                         <td><%= u. %></td>
                     </tr>
                 <% }) %>
-            </tbody>
+            </tbody><br>
+            <input type="submit" name="Add a Role">
         </table>
     </div>
 </main>

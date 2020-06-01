@@ -3,10 +3,7 @@ var router = express.Router();
 const passport = require('passport');
 const productionsCtrl = require('../controllers/productions');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'OSDb: Online Stage Database' });
-});
+router.get('/', productionsCtrl.index)
 
 router.get('/auth/google', passport.authenticate(
   'google',
@@ -25,9 +22,5 @@ router.get('/logout', function(req,res){
   req.logout();
   res.redirect('/');
 });
-
-router.get('/productions/add', productionsCtrl.index);
-
-router.post('/',productionsCtrl.create)
 
 module.exports = router;

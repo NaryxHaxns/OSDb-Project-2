@@ -45,6 +45,14 @@ main {
   padding: 10px;
 }
 
+.prodTitles {
+  color: rgb(0,0,0);
+}
+
+.prodHeads {
+  font-weight: bold;
+}
+
 #avImg {
   border: 3px solid rgb(86, 47, 126);
   width: 60px;
