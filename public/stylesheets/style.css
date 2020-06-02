@@ -45,12 +45,16 @@ main {
   padding: 10px;
 }
 
-.prodTitles {
+.prodTitles, .perfTitles {
   color: rgb(0,0,0);
 }
 
-.prodHeads {
+.prodHeads, .perfHeads {
   font-weight: bold;
+}
+
+#addPerf {
+  display: grid;
 }
 
 #avImg {

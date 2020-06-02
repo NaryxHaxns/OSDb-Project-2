@@ -1,7 +1,22 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h3>Performer Catalog</h3>
+    <h3>Performer Catalog</h3><br>
+    <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% performers.forEach(function(p) { %>
+            <tr>
+              <td><a class="perfTitles" href="/performers/<%= p._id %>"><%= p.name %></a></td>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    
 </main>
 
 <%- include('../partials/footer') %>

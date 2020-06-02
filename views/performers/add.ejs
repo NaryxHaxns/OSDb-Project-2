@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<main>
+    <form id="addPerf" action="/performers" method="POST">
+        <label>Name: </label>
+        <input type="text" name="name">
+        <label>Birthdate: </label>
+        <input type="Date" name="born">
+        <label>Bio: </label>
+        <textarea name="bio"></textarea>
+        <br>
+        <input type="submit" value="Add Performer">
+    </form>
+</main>
+
+<%- include('../partials/footer') %>
