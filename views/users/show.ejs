@@ -2,7 +2,7 @@
 
 <main>
     <div id="pFileHead">
-        <h1><%= user.name %></h1>
+        <h2><%= user.name %></h2>
         <img id="avImg" src="<%= user.avatar %>" alt="User Picture">
         <p><%= user.born %></p>
     </div><br>
@@ -16,13 +16,8 @@
                 </tr>
             </thead>
             <tbody>
-                <% production.find(function(u){ %>
-                    <tr>
-                        <td><%= u.title %></td>
-                    </tr>
-                <% }) %>
             </tbody><br>
-            <input type="submit" name="Add a Role">
+            <input type="submit" value="Add a Role">
         </table>
     </div>
 </main>

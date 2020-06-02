@@ -7,7 +7,6 @@ module.exports = {
 
 function index(req,res,next){
     res.render('users/index',{
-        user,
         user: req.user,
         name: req.query.name,
         sortKey
@@ -15,8 +14,7 @@ function index(req,res,next){
 };
 
 function show(req,res){
-    console.log(User);
-    User.findById(req.params.id), function(err,user){
-        res.render('users/show', { title: 'OSDb:Online Stage Database - User', user });
-    };
+    User.findById(req.params.id, function(err,user){
+        res.render('users/show', { title: 'OSDb: Online Stage Database - User', user });
+    });
 };

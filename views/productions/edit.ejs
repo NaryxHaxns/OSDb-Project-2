@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <main>
-    <form id="editProd" action="/productions" method="PUT">
+    <form id="editProd" action="/productions/<%= productions._id %>?_method=PUT" method="POST">
         <label>Title:</label>
         <input type="text" name="title" value="<%= productions.title %>">
         <label>Playwright:</label>

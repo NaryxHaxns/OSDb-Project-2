@@ -6,7 +6,9 @@ module.exports = {
     create,
     show,
     addPerformer,
-    edit
+    updateCast,
+    edit,
+    update
 }
 
 function index(req,res){
@@ -24,9 +26,12 @@ function add(req,res){
 }
 
 function create(req,res){
-    req.body.playwright = req.body.playwright.replace(/\s*,\s*/g);
+    req.body.playwright = req.body.playwright.replace(/\s*,\s*/g, ', ');
     req.body.debut = parseInt(req.body.debut);
-    req.body.genre = req.body.genre.replace(/\s*,\s*/g);
+    req.body.genre = req.body.genre.replace(/\s*,\s*/g, ', ');
+    for (let key in req.body) {
+      if (req.body[key] === '') delete req.body[key];
+    }
     const production = new Production(req.body);
     production.save(function(err) {
         if (err) return res.redirect('/productions/add')
@@ -41,16 +46,28 @@ function show(req,res){
 };
 
 function addPerformer(req,res){
+    Production.findById(req.params.id, function(err, productions){
+        res.render('productions/addPerformer', { title: 'OSDb: Online Stage Database - Add Performer', productions })
+    })
+};
+
+function updateCast(req,res){
     Production.findById(req.params.id, function(err,productions){
         productions.cast.push(req.body.performerId);
         productions.save(function(err){
             res.redirect(`/productions/${productions._id}`);
         });
     });
-};
+}
 
 function edit(req,res){
     Production.findById(req.params.id, function(err, productions){
         res.render('productions/edit', { title: 'OSDb: Online Stage Database - Edit Production', productions })
     })
+}
+
+function update(req,res){
+    Production.findByIdAndUpdate(req.params.id, req.body, function(err, productions){
+        res.redirect(`/productions/${productions._id}`);
+    });
 }

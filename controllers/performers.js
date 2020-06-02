@@ -37,7 +37,9 @@ function show(req,res){
 }
 
 function addRole(req,res){
-    res.render('performers/addRole', { title: 'OSDb: Online Stage Database - Add a Role', performers })
+    Performer.findById(req.params.id, function(err, performers){
+        res.render('performers/addRole', { title: 'OSDb: Online Stage Database - Add a Role', performers })
+    })
 }
 
 function edit(req,res){

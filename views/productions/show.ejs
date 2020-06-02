@@ -14,12 +14,12 @@
         <div><%= productions.synopsis %></div>
         <div class="prodHeads">Cast: </div>
         <ul>
+            <%- productions.cast.map(p => `<li>${p.name}</li>`).join('') %>
         </ul>
     </section>
     <% if (user) { %>
         <a href="/productions/<%= productions._id %>/addPerformer"><input type="submit" value="Add to Cast"></a>
         <a href="/productions/<%= productions._id %>/edit"><input type="submit" value="Edit"></a>
-
     <% } else {} %>
 </main>
 

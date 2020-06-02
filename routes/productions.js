@@ -8,10 +8,10 @@ router.get('/:id', productionsCtrl.show);
 
 router.get('/:id/edit', productionsCtrl.edit);
 
+router.get('/:id/addPerformer', productionsCtrl.addPerformer);
+
 router.post('/',productionsCtrl.create);
 
-router.post('/:id', productionsCtrl.addPerformer);
-
-
+router.put('/:id', productionsCtrl.update);
 
 module.exports = router;
