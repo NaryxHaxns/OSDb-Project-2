@@ -5,7 +5,8 @@ module.exports = {
     add,
     create,
     show,
-    addPerformer
+    addPerformer,
+    edit
 }
 
 function index(req,res){
@@ -47,3 +48,9 @@ function addPerformer(req,res){
         });
     });
 };
+
+function edit(req,res){
+    Production.findById(req.params.id, function(err, productions){
+        res.render('productions/edit', { title: 'OSDb: Online Stage Database - Edit Production', productions })
+    })
+}

@@ -14,7 +14,8 @@ function index(req,res,next){
     });
 };
 
-function show(req,res,next){
+function show(req,res){
+    console.log(User);
     User.findById(req.params.id), function(err,user){
         res.render('users/show', { title: 'OSDb:Online Stage Database - User', user });
     };

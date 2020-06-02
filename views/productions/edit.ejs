@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<main>
+    <form id="editProd" action="/productions" method="PUT">
+        <label>Title:</label>
+        <input type="text" name="title" value="<%= productions.title %>">
+        <label>Playwright:</label>
+        <input type="text" name="playwright" value="<%= productions.playwright %>">
+        <label>Debut:</label>
+        <input type="Date" name="debut">
+        <label>Genre:</label>
+        <input type="text" name="genre" value="<%= productions.genre %>">
+        <label>Synopsis:</label>
+        <textarea id="syn" name="synopsis"></textarea>
+        <br>
+        <input type="submit" value="Edit Production">
+    </form>
+</main>
+
+<%- include('../partials/footer') %>

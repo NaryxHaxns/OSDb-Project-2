@@ -5,7 +5,9 @@ module.exports = {
     add,
     create,
     show,
-    addRole
+    addRole,
+    edit,
+    update
 }
 
 function index(req,res){
@@ -36,4 +38,15 @@ function show(req,res){
 
 function addRole(req,res){
     res.render('performers/addRole', { title: 'OSDb: Online Stage Database - Add a Role', performers })
+}
+
+function edit(req,res){
+    Performer.findById(req.params.id, function(err, performers){
+        res.render('performers/edit', { title: 'OSDb: Online Stage Database - Edit Performer', performers })
+    })
+}
+
+function update(req,res){
+    Performer.update(req.params.id, req,body);
+    res.redirect(`/performers/${req.params.id}`);
 }
