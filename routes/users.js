@@ -7,6 +7,6 @@ router.get('/users/index', function(req, res, next) {
   res.render('index', { title: 'OSDb: Online Stage Database' });
 });
 
-router.get('/users/:id', usersCtrl.show)
+router.get('/:id', usersCtrl.show)
 
 module.exports = router;

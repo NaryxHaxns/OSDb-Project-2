@@ -4,7 +4,8 @@ module.exports = {
     index,
     add,
     create,
-    show
+    show,
+    addPerformer
 }
 
 function index(req,res){
@@ -36,4 +37,13 @@ function show(req,res){
     Production.findById(req.params.id, function(err,productions){
         res.render('productions/show', { title: 'OSDb: Online Stage Database - Production', productions })
     })
+};
+
+function addPerformer(req,res){
+    Production.findById(req.params.id, function(err,productions){
+        productions.cast.push(req.body.performerId);
+        productions.save(function(err){
+            res.redirect(`/productions/${productions._id}`);
+        });
+    });
 };

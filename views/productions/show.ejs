@@ -16,8 +16,9 @@
         <ul>
         </ul>
     </section>
-    <br>
-    <a href="/"><input type="submit" value="All Productions"></a>
+    <% if (user) { %>
+        <a href="/productions/<%= productions._id %>/addPerformer"><input type="submit" value="Add to Cast"></a>
+    <% } else {} %>
 </main>
 
 <%- include('../partials/footer') %>

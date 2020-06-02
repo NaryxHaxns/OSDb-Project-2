@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+<main>
+    <form action="/productions/<%= productions._id %>" method="PUT">
+        <label>Role:</label>
+        <input type="text" value="Role - Performer">
+        <a href="/productions/<%= productions._id %>"><input type="submit" value="Add Castmember"></a>
+    </form>
+</main>
+
+<%- include('../partials/footer') %>

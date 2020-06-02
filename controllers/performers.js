@@ -4,7 +4,8 @@ module.exports = {
     index,
     add,
     create,
-    show
+    show,
+    addRole
 }
 
 function index(req,res){
@@ -31,4 +32,8 @@ function show(req,res){
     Performer.findById(req.params.id, function(err,performers){
         res.render('performers/show', { title: 'OSDb: Online Stage Database - Performer', performers });
     })
+}
+
+function addRole(req,res){
+    res.render('performers/addRole', { title: 'OSDb: Online Stage Database - Add a Role', performers })
 }

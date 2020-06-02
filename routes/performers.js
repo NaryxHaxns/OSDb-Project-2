@@ -8,8 +8,8 @@ router.get('/add', performersCtrl.add);
 
 router.get('/:id', performersCtrl.show);
 
+router.get('/:id/addRole', performersCtrl.addRole)
+
 router.post('/', performersCtrl.create);
-
-
 
 module.exports = router;

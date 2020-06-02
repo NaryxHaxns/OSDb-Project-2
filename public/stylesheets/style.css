@@ -40,6 +40,8 @@ nav {
 main {
   margin-left: 150px;
   height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 8fr;
   text-align: center;
   border: 2px solid rgb(86, 47, 126);
   padding: 10px;

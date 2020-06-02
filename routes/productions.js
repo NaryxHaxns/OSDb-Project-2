@@ -8,4 +8,6 @@ router.get('/:id', productionsCtrl.show);
 
 router.post('/',productionsCtrl.create);
 
+router.post('/:id', productionsCtrl.addPerformer);
+
 module.exports = router;

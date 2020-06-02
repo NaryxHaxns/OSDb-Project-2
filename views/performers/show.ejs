@@ -13,8 +13,9 @@
 
         </ul>
     </section>
-    <br>
-    <a href="/performers"><input type="submit" value="All Performers"></a>
+    <% if (user){ %>
+    <a href="/performers/<%= performers._id %>/addRoll"><input type="submit" value="Add a Role"></a>
+    <% } else {} %>
 </main>
 
 <%- include('../partials/footer') %>
