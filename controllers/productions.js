@@ -27,7 +27,6 @@ function add(req,res){
 
 function create(req,res){
     req.body.playwright = req.body.playwright.replace(/\s*,\s*/g, ', ');
-    req.body.debut = parseInt(req.body.debut);
     req.body.genre = req.body.genre.replace(/\s*,\s*/g, ', ');
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
@@ -68,6 +67,7 @@ function edit(req,res){
 
 function update(req,res){
     Production.findByIdAndUpdate(req.params.id, req.body, function(err, productions){
-        res.redirect(`/productions/${productions._id}`);
+        console.log(err);
+        res.redirect(`/productions/${req.params.id}`);
     });
 }

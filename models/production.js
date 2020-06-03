@@ -11,7 +11,7 @@ const productionSchema = new Schema({
         required: true
     },
     debut: {
-        type: Number,
+        type: Date,
         required: true
     },
     genre: {
