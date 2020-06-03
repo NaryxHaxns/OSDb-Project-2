@@ -14,4 +14,3 @@ function index(req,res){
         res.render('index', { title: 'OSDb: Online Stage Database', productions, user:req.user })
     }).sort(sortKey);
 };
-

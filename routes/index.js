@@ -3,7 +3,7 @@ var router = express.Router();
 const passport = require('passport');
 const productionsCtrl = require('../controllers/productions');
 
-router.get('/', productionsCtrl.index)
+router.get('/', productionsCtrl.index);
 
 router.get('/auth/google', passport.authenticate(
   'google',
