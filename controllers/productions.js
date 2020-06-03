@@ -66,7 +66,7 @@ function edit(req,res){
 }
 
 function update(req,res){
-    Production.findByIdAndUpdate(req.params.id, req.body, function(err, productions){
+    Production.findByIdAndUpdate(req.params.id, req.body, function(err){
         console.log(err);
         res.redirect(`/productions/${req.params.id}`);
     });

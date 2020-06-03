@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <main>
-    <form id="editPerf" action="/performers" method="PUT">
+    <form id="editPerf" action="/performers/<%= performers._id %>?_method=PUT" method="POST">
         <label>Name: </label>
         <input type="text" name="name" value="<%= performers.name %>">
         <label>Birthdate: </label>

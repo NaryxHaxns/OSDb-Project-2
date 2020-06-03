@@ -49,6 +49,8 @@ function edit(req,res){
 }
 
 function update(req,res){
-    Performer.update(req.params.id, req,body);
-    res.redirect(`/performers/${req.params.id}`);
+    Performer.findByIdAndUpdate(req.params.id, req.body, function(err){
+        res.redirect(`/performers/${req.params.id}`);
+    });
 }
+
