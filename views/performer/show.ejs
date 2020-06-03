@@ -2,21 +2,21 @@
 
 <main>
     <section>
-        <div class="perfHeads">Name: </div>
+        <div class="catHeads">Name: </div>
         <div><%= performer.name %></div>
-        <div class="perfHeads">Birthdate: </div>
+        <div class="catHeads">Birthdate: </div>
         <div><%= performer.born %></div>
-        <div class="perfHeads">Bio: </div>
+        <div class="catHeads">Bio: </div>
         <div><%= performer.bio %></div>
-        <div class="perfHeads">Roles: </div>
+        <div class="catHeads">Roles: </div>
         <ul>
 
         </ul>
     </section>
     <% if (user){ %>
-    <a href="/performer/<%= performer._id %>/addRoll"><input type="submit" value="Add a Role"></a>
-    <a href="/performer/<%= performer._id %>/edit"><input type="submit" value="Edit Performer"></a>
-    <a href="/performer/<%= performer._id %>/remove"><input type="submit" value="Delete Performer"></a>
+    <a class="linkBtn" href="/performer/<%= performer._id %>/addRoll">Add a Role</a>
+    <a class="linkBtn" href="/performer/<%= performer._id %>/edit">Edit Performer</a>
+    <a class="linkBtn" href="/performer/<%= performer._id %>/remove">Delete Performer</a>
     <% } else {} %>
 </main>
 

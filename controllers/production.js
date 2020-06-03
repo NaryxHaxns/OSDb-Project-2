@@ -57,7 +57,7 @@ function edit(req,res){
 }
 
 function update(req,res){
-    Production.findByIdAndUpdate(req.params.id, req.body, function(err){
+    Production.findByIdAndUpdate(req.params.id, req.body, function(err,production){
         res.redirect(`/production/${req.params.id}`);
     });
 }

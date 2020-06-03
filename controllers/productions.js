@@ -9,7 +9,14 @@ function index(req,res){
     if(req.user){
         user = req.user
     }
-    let sortKey = req.query.sort || 'title';
+    let sortKey;
+    if(req.query === 'title'){
+        sortKey = req.query.sort || 'title';
+        return sortKey;
+    } else if (req.query === 'genre'){
+        sortKey = req.query.sort || 'genre';   
+        return sortKey;
+    }
     Production.find({}, function(err,productions){
         res.render('index', { title: 'OSDb: Online Stage Database', productions, user:req.user })
     }).sort(sortKey);

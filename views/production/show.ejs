@@ -2,25 +2,25 @@
 
 <main>
     <section>
-        <div class="prodHeads">Title: </div>
+        <div class="catHeads">Title: </div>
         <div><%= production.title %></div>
-        <div class="prodHeads">Playwright: </div>
+        <div class="catHeads">Playwright: </div>
         <div><%= production.playwright %></div>
-        <div class="prodHeads">Debut: </div>
+        <div class="catHeads">Debut: </div>
         <div><%= production.debut %></div>
-        <div class="prodHeads">Genre: </div>
+        <div class="catHeads">Genre: </div>
         <div><%= production.genre %></div>
-        <div class="prodHeads">Synopsis: </div>
+        <div class="catHeads">Synopsis: </div>
         <div><%= production.synopsis %></div>
-        <div class="prodHeads">Cast: </div>
+        <div class="catHeads">Cast: </div>
         <ul>
             <%- production.cast.map(p => `<li>${p.name}</li>`).join('') %>
         </ul>
     </section>
     <% if (user) { %>
-        <a href="/production/<%= production._id %>/addPerformer"><input type="submit" value="Add to Cast"></a>
-        <a href="/production/<%= production._id %>/edit"><input type="submit" value="Edit Production"></a>
-        <a href="/production/<%= production._id %>/remove"><input type="submit" value="Delete Production"></a>
+        <a class="linkBtn" href="/production/<%= production._id %>/addPerformer">Add to Cast</a>
+        <a class="linkBtn" href="/production/<%= production._id %>/edit">Edit Production</a>
+        <a class="linkBtn" href="/production/<%= production._id %>/remove">Delete Production</a>
     <% } else {} %>
 </main>
 

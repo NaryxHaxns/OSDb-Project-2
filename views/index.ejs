@@ -2,17 +2,23 @@
 
 <main>
   <h3>Production Catalog</h3>
-  <table>
+  <div>
+    <p>Sort by:</p>
+    <a class="sortHeads" href="/?sortBy=title">Title</a>
+    <a class="sortHeads" href="/?sortBy=genre">Genre</a>
+  </div>
+  <table class="tabBdy">
     <thead>
       <tr>
         <th>Title</th>
         <th>Genre</th>
+        <br>
       </tr>
     </thead>
     <tbody>
       <% productions.forEach(function(p) { %>
         <tr>
-          <td><a class="prodTitles" href="/production/<%= p._id %>"><%= p.title %></a></td>
+          <td><a class="pHeads" href="/production/<%= p._id %>"><%= p.title %></a></td>
           <td><%= p.genre %></td>
         </tr>
       <% }); %>

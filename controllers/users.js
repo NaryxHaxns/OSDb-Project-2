@@ -5,5 +5,5 @@ module.exports = {
 };
 
 function index(req,res){
-    res.render('users/index',{ title: 'OSDb: Online Stage Database - Users' });
+    res.render('users/index', { title: 'OSDb: Online Stage Database - Users' });
 };
