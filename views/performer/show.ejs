@@ -15,7 +15,8 @@
     </section>
     <% if (user){ %>
     <a href="/performer/<%= performer._id %>/addRoll"><input type="submit" value="Add a Role"></a>
-    <a href="/performer/<%= performer._id %>/edit"><input type="submit" value="Edit"></a>
+    <a href="/performer/<%= performer._id %>/edit"><input type="submit" value="Edit Performer"></a>
+    <a href="/performer/<%= performer._id %>/remove"><input type="submit" value="Delete Performer"></a>
     <% } else {} %>
 </main>
 

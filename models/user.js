@@ -6,7 +6,6 @@ const userSchema = new Schema({
     googleId: String,
     email: String,
     avatar: String,
-    born: Date,
     shows: [{
         type: String,
         ref: 'Production'

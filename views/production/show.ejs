@@ -19,7 +19,8 @@
     </section>
     <% if (user) { %>
         <a href="/production/<%= production._id %>/addPerformer"><input type="submit" value="Add to Cast"></a>
-        <a href="/production/<%= production._id %>/edit"><input type="submit" value="Edit"></a>
+        <a href="/production/<%= production._id %>/edit"><input type="submit" value="Edit Production"></a>
+        <a href="/production/<%= production._id %>/remove"><input type="submit" value="Delete Production"></a>
     <% } else {} %>
 </main>
 

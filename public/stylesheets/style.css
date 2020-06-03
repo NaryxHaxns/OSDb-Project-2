@@ -41,7 +41,7 @@ main {
   margin-left: 150px;
   height: 100%;
   display: grid;
-  grid-template-rows: repeat(2, 1fr) 8fr;
+  grid-template-rows: repeat(3, 1fr) 13fr;
   text-align: center;
   border: 2px solid rgb(86, 47, 126);
   padding: 10px;

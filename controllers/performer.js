@@ -6,7 +6,9 @@ module.exports = {
     show,
     addRole,
     edit,
-    update
+    update,
+    remove,
+    deletePerf
 }
 
 function add(req,res){
@@ -47,3 +49,14 @@ function update(req,res){
     });
 }
 
+function remove(req,res){
+    Performer.findById(req.params.id, function(err,performer){
+        res.render('performer/remove', { title: 'OSDb: Online Stage Database - Remove Performer?', performer })
+    })
+}
+
+function deletePerf(req,res){
+    Performer.findByIdAndDelete(req.params.id, function(err){
+        res.redirect('/performers');
+    })
+}

@@ -7,7 +7,9 @@ module.exports = {
     addPerformer,
     updateCast,
     edit,
-    update
+    update,
+    remove,
+    deleteProd
 }
 
 function add(req,res){
@@ -58,4 +60,16 @@ function update(req,res){
     Production.findByIdAndUpdate(req.params.id, req.body, function(err){
         res.redirect(`/production/${req.params.id}`);
     });
+}
+
+function remove(req,res){
+    Production.findById(req.params.id, function(err, production){
+        res.render('production/remove', { title: 'OSDb: Online Stage Database - Remove Production?', production });
+    })
+}
+
+function deleteProd(req,res){
+    Production.findByIdAndDelete(req.params.id, function(err){
+        res.redirect('/');
+    })
 }
