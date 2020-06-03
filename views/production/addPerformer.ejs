@@ -3,7 +3,10 @@
 <main>
     <form action="/production/<%= production._id %>?_method=PUT" method="POST">
         <label>Role:</label>
-        <input type="text" value="Role - Performer">
+        <input type="text" value="Role">
+        <select name="performer">
+            
+        </select>
         <a href="/production/<%= production._id %>"><input type="submit" value="Add Castmember"></a>
     </form>
 </main>

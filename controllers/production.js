@@ -43,7 +43,7 @@ function addPerformer(req,res){
 
 function updateCast(req,res){
     Production.findById(req.params.id, function(err,production){
-        production.cast.push(req.body.performerId);
+        production.cast.push(req.body);
         production.save(function(err){
             res.redirect(`/production/${production._id}`);
         });
