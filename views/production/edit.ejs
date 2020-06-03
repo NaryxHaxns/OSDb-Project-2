@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
 
 <main>
-    <form id="editProd" action="/productions/<%= productions._id %>?_method=PUT" method="POST">
+    <form id="editProd" action="/production/<%= production._id %>?_method=PUT" method="POST">
         <label>Title:</label>
-        <input type="text" name="title" value="<%= productions.title %>">
+        <input type="text" name="title" value="<%= production.title %>">
         <label>Playwright:</label>
-        <input type="text" name="playwright" value="<%= productions.playwright %>">
+        <input type="text" name="playwright" value="<%= production.playwright %>">
         <label>Debut:</label>
         <input type="Date" name="debut">
         <label>Genre:</label>
-        <input type="text" name="genre" value="<%= productions.genre %>">
+        <input type="text" name="genre" value="<%= production.genre %>">
         <label>Synopsis:</label>
         <textarea id="syn" name="synopsis"></textarea>
         <br>

@@ -12,8 +12,10 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
+const userRouter = require('./routes/user');
 var usersRouter = require('./routes/users');
-const productionsRouter = require('./routes/productions');
+const productionRouter = require('./routes/production');
+const performerRouter = require('./routes/performer');
 const performersRouter = require('./routes/performers');
 
 var app = express();
@@ -41,9 +43,11 @@ app.use(function(req,res,next){
 });
 
 app.use('/', indexRouter);
+app.use('/user', userRouter);
 app.use('/users', usersRouter);
-app.use('/productions', productionsRouter);
+app.use('/production', productionRouter);
 app.use('/performers', performersRouter);
+app.use('/performer', performerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

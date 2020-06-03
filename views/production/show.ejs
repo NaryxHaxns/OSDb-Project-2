@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<main>
+    <section>
+        <div class="prodHeads">Title: </div>
+        <div><%= production.title %></div>
+        <div class="prodHeads">Playwright: </div>
+        <div><%= production.playwright %></div>
+        <div class="prodHeads">Debut: </div>
+        <div><%= production.debut %></div>
+        <div class="prodHeads">Genre: </div>
+        <div><%= production.genre %></div>
+        <div class="prodHeads">Synopsis: </div>
+        <div><%= production.synopsis %></div>
+        <div class="prodHeads">Cast: </div>
+        <ul>
+            <%- production.cast.map(p => `<li>${p.name}</li>`).join('') %>
+        </ul>
+    </section>
+    <% if (user) { %>
+        <a href="/production/<%= production._id %>/addPerformer"><input type="submit" value="Add to Cast"></a>
+        <a href="/production/<%= production._id %>/edit"><input type="submit" value="Edit"></a>
+    <% } else {} %>
+</main>
+
+<%- include('../partials/footer') %>
