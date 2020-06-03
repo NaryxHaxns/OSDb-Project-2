@@ -14,7 +14,7 @@ router.get('/:id/remove', productionCtrl.remove);
 
 router.post('/',productionCtrl.create);
 
-router.post('/:id', productionCtrl.deleteProd);
+router.delete('/:id', productionCtrl.deleteProd);
 
 router.put('/:id', productionCtrl.update);
 

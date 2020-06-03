@@ -14,7 +14,7 @@ router.get('/:id/remove', performerCtrl.remove);
 
 router.post('/', performerCtrl.create);
 
-router.post('/:id', performerCtrl.deletePerf);
+router.delete('/:id', performerCtrl.deletePerf);
 
 router.put('/:id', performerCtrl.update);
 

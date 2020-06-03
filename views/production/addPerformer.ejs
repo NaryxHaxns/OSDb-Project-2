@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <main>
-    <form action="/production/<%= production._id %>" method="PUT">
+    <form action="/production/<%= production._id %>?_method=PUT" method="POST">
         <label>Role:</label>
         <input type="text" value="Role - Performer">
         <a href="/production/<%= production._id %>"><input type="submit" value="Add Castmember"></a>
