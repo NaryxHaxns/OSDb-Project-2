@@ -5,11 +5,7 @@ module.exports = {
 }
 
 function index(req,res){
-    let user = null;
-    if(req.user){
-        user = req.user
-    }
-    let sortKey = req.query.sort || 'title';
+    let sortKey = req.query.sortBy || 'title';
     Production.find({}).sort(sortKey).exec(function(err,productions){
         res.render('index', { title: 'OSDb: Online Stage Database', productions, user:req.user })
     });
