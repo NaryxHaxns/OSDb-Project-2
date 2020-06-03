@@ -19,7 +19,7 @@ function create(req,res){
     const performer = new Performer(req.body);
     performer.save(function(err){
         if (err) return res.redirect('/performer/add');
-        res.redirect('/performer');
+        res.redirect('/performers');
     })
 }
 
