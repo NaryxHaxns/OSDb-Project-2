@@ -31,8 +31,10 @@ function create(req,res){
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
     }
+    req.body.createdBy = req.user._id;
     const production = new Production(req.body);
     production.save(function(err) {
+        console.log(production)
         if (err) return res.redirect('/productions/add')
         res.redirect('/')
     })
@@ -40,9 +42,7 @@ function create(req,res){
 
 function show(req,res){
     Production.findById(req.params.id).populate('cast').exec(function(err,production){
-        // Performer.find({production: production._id}, function(err,performer){
-            res.render('productions/show', { title: 'OSDb: Online Stage Database - Production', production/*, performer*/ })
-        // })
+            res.render('productions/show', { title: 'OSDb: Online Stage Database - Production', production })
     })
 };
 
@@ -57,12 +57,12 @@ function addPerformer(req,res){
 function updateCast(req,res){
     console.log('hitting')
     Production.findById(req.params.id, function(err,production){
-        Performer.findById(req.body.performerId, function(err,performer){
-            console.log(req.body.performerId)
-            // production.cast.push(performer);
-            // production.save(function(err){
-            //     res.redirect(`/production/${production._id}`);
-            // });
+        Performer.findOne({_id: req.body.performer}, function(err,performer){
+            console.log('this is the performer', performer)
+            production.cast.push(performer._id);
+            production.save(function(err){
+                res.redirect(`/productions/${production._id}`);
+            });
         });
     });
 }

@@ -6,10 +6,10 @@ const userSchema = new Schema({
     googleId: String,
     email: String,
     avatar: String,
-    shows: [{
-        type: String,
-        ref: 'Production'
-    }]
+    // shows: [{
+    //     type: String,
+    //     ref: 'Production'
+    // }]
 }, {
     timestamps: true
 });

@@ -25,6 +25,7 @@ function add(req,res){
 }
 
 function create(req,res){
+    console.log('this is the req.body', req.body)
     const s = req.body.born;
     req.body.born = `${s.substr(5, 2)}-${s.substr(8, 2)}-${s.substr(0, 4)}`;
     const performer = new Performer(req.body);

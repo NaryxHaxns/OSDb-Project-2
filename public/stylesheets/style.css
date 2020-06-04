@@ -71,9 +71,9 @@ main {
   display: grid;
 }
 
-#avImg {
+.avImg {
   border: 3px solid rgb(86, 47, 126);
-  width: 60px;
+  width: 250px;
   border-radius: 8px;
 }
 

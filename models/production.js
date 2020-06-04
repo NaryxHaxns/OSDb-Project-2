@@ -23,7 +23,11 @@ const productionSchema = new Schema({
     cast: [{
         type: Schema.Types.ObjectId,
         ref: 'Performer'
-    }]
+    }],
+    createdBy: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 }, {
     timestamps: true
 });

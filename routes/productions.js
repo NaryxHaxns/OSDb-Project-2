@@ -12,12 +12,17 @@ router.get('/:id/addPerformer', productionsCtrl.addPerformer);
 
 router.get('/:id/remove', productionsCtrl.remove);
 
-router.post('/',productionsCtrl.create);
+router.post('/', isLoggedIn, productionsCtrl.create);
 
 router.delete('/:id', productionsCtrl.deleteProd);
 
 router.put('/:id', productionsCtrl.update);
 
 router.put('/:id/updateCast', productionsCtrl.updateCast)
+
+function isLoggedIn(req, res, next) {
+    if ( req.isAuthenticated() ) return next();
+    res.redirect('/auth/google');
+  }  
 
 module.exports = router;

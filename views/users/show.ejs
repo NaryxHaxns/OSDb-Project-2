@@ -3,7 +3,11 @@
 <main>
     <div id="pFileHead">
         <h2><%= user.name %></h2>
-        <img id="avImg" src="<%= user.avatar %>" alt="User Picture">
+        <% if(user.avatar){ %>
+        <img class="avImg" src="<%= user.avatar %>" alt="User Picture">
+        <% } else { %>
+        <img class="avImg" src="https://i.imgur.com/aDIPn5u.jpg" alt="No Image">
+        <% } %>
     </div><br>
     <div id="pFileBody">
         <h3>Roles: </h3>

@@ -14,7 +14,14 @@
         <div><%= production.synopsis %></div>
         <div class="catHeads">Cast: </div>
         <ul>
-            <%- production.cast.map(p => `<li>${p.name}</li>`).join('') %>
+            <% console.log(production) %>
+            <% if(production.cast){ %>
+                <% production.cast.forEach(function(p){ %>
+                    <li><%= p.name %></li>
+                <% }) %>
+            <% } else { %>
+                <p>Please add to cast</p>
+            <% } %>
         </ul>
     </section>
     <% if (user) { %>
