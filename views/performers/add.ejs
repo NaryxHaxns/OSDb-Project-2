@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
 
 <main>
-    <form id="editPerf" action="/performer/<%= performer._id %>?_method=PUT" method="POST">
+    <form id="addPerf" action="/performers" method="POST">
         <label>Name: </label>
-        <input type="text" name="name" value="<%= performer.name %>">
+        <input type="text" name="name">
         <label>Birthdate: </label>
         <input type="Date" name="born">
         <label>Bio: </label>
         <textarea name="bio"></textarea>
         <br>
-        <input type="submit" value="Update Performer">
+        <input type="submit" value="Add Performer">
     </form>
 </main>
 

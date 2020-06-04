@@ -3,11 +3,11 @@
 <main>
     <h2>Are you sure you would like to delete <%= production.title %> by <%= production.playwright %>?</h2>
     <div>
-        <form action="/production/<%= production._id %>?_method=DELETE" method="POST">
+        <form action="/productions/<%= production._id %>?_method=DELETE" method="POST">
             <input type="submit" value="Yes">
         </form>
         <br>
-        <a href="/production/<%= production._id %>"><input type="submit" value="No"></a>
+        <input type="submit" value="No">
     </div>
 </main>
 
