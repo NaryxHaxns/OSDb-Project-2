@@ -10,7 +10,9 @@
         <div><%= performer.bio %></div>
         <div class="catHeads">Roles: </div>
         <ul>
-
+            <% performer.roles.forEach(function(r){ %>
+            <li class="castNames"><%= r %></li>
+            <% }) %>
         </ul>
     </section>
     <% if (user){ %>
