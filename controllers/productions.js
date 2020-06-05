@@ -47,7 +47,7 @@ function show(req,res){
 
 function addPerformer(req,res){
     Production.findById(req.params.id, function(err, production){
-        const castIds = production.cast.map(c => c._id);
+        const castIds = production.cast.map(c => c.performer);
         Performer.find({_id: {$nin: castIds}}, function(err, performers){
             res.render('productions/addPerformer', { title: 'OSDb: Online Stage Database - Add Performer', production, performers })
         })

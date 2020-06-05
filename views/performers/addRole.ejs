@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
 <main>
-    <form action="/performers/<%= performer._id %>" method="PUT">
-        <label>Role: </label>
+    <form action="/performers/<%= performer._id %>/updateRoles?_method=PUT" method="POST">
+        <label>Role:</label>
         <select name="performance">
             <%- productions.map(p => `<option value="${p._id}">${p.title}</option>`).join('') %>
         </select>

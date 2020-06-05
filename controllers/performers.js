@@ -41,7 +41,7 @@ function show(req,res){
 }
 
 function addRole(req,res){
-    Performer.findById(req.params.id).populate('title').exec(function(err, performer){
+    Performer.findById(req.params.id, function(err, performer){
         Production.find({_id: {$nin: performer.roles}}, function(err,productions){
         })
         res.render('performers/addRole', { title: 'OSDb: Online Stage Database - Add a Role', performer, productions })
