@@ -10,10 +10,6 @@
 <body>
     <nav>
         <a href="/"><img id="logo" src="https://i.imgur.com/9zEsPUD.jpg" alt="Comedy/Tragedy Home Button"></a>
-        <div id="searchBar">
-            <input type="search" autocomplete="off">
-            <input type="submit" value="Search">
-        </div>
         <div id="entry">
             <% if (user) { %>
                 Welcome, <%= user.name %><a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>

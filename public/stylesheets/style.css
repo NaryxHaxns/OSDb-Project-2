@@ -10,10 +10,6 @@ body {
   border-radius: 30px;
 }
 
-#searchBar {
-  display: inline;
-}
-
 a {
   color: rgb(139,228,232);
 }
@@ -30,7 +26,7 @@ nav {
 
 #sBar {
   position: fixed;
-  height: 550px;
+  height: 555px;
   width: 125px;
   padding: 10px;
   background-color: rgb(86, 47, 126);

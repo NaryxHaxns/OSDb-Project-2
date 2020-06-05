@@ -61,18 +61,11 @@ function updateCast(req,res){
                 role: req.body.role,
                 performer: performer._id
             }
-            // const newRole = {
-            //     title: production.title
-            // }
-            console.log(performer);
-            console.log(production);
+            const newRole = `${production.title} - ${req.body.role}`
             production.cast.push(newCast);
-            performer.roles.push(production.title);
+            performer.roles.push(newRole);
             performer.save(function(err){
-                if(err){
-                    console.log(err);
-                }
-            });
+            })
             production.save(function(err){
                 res.redirect(`/productions/${production._id}`);
             })
