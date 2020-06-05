@@ -1,0 +1,11 @@
+<%- include('../partials/header') %>
+
+<main>
+    <form action="/users/<%= user.id %>?_method=PUT" method="POST">
+        <textarea name="bio" id="userBio"></textarea>
+        <br>
+        <input type="submit" value="Update Bio">
+    </form>
+</main>
+
+<%- include('../partials/footer') %>

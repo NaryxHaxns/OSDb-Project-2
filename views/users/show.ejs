@@ -11,7 +11,11 @@
     </div>
     <br>
     <div id="pFileBody">
-        
+        <h2>Bio:</h2>
+        <div><%= user.bio %></div>
+        <form action="/users/<%= user._id %>/edit" method="GET">
+            <input type="submit" value="Edit Bio">
+        </form>
     </div>
 </main>
 
