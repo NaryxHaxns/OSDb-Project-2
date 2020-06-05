@@ -73,7 +73,7 @@ function updateCast(req,res){
 }
 
 function edit(req,res){
-    Production.findById(req.params.id).populate('cast.performer').exec(function(err, production){
+    Production.findById(req.params.id, function(err, production){
         res.render('productions/edit', { title: 'OSDb: Online Stage Database - Edit Production', production })
     })
 }

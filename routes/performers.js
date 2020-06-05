@@ -8,8 +8,6 @@ router.get('/add', isLoggedIn, performersCtrl.add);
 
 router.get('/:id', performersCtrl.show);
 
-router.get('/:id/addRole', isLoggedIn, performersCtrl.addRole)
-
 router.get('/:id/edit', isLoggedIn, performersCtrl.edit);
 
 router.get('/:id/remove', isLoggedIn, performersCtrl.remove);

@@ -16,6 +16,9 @@ const productionSchema = new Schema({
         type: String,
         required: true
     },
+    showimg: {
+        type: String
+    },
     playwright: {
         type: String,
         required: true

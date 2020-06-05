@@ -1,12 +1,10 @@
 const Performer = require('../models/performer');
-const Production = require('../models/production');
 
 module.exports = {
     index,
     add,
     create,
     show,
-    addRole,
     edit,
     update,
     remove,
@@ -37,14 +35,6 @@ function create(req,res){
 function show(req,res){
     Performer.findById(req.params.id, function(err,performer){
         res.render('performers/show', { title: 'OSDb: Online Stage Database - Performer', performer });
-    })
-}
-
-function addRole(req,res){
-    Performer.findById(req.params.id, function(err, performer){
-        Production.find({_id: {$nin: performer.roles}}, function(err,productions){
-        })
-        res.render('performers/addRole', { title: 'OSDb: Online Stage Database - Add a Role', performer, productions })
     })
 }
 

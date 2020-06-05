@@ -2,7 +2,7 @@
 
 <main>
     <form action="/users/<%= user.id %>?_method=PUT" method="POST">
-        <textarea name="bio" id="userBio"></textarea>
+        <textarea name="bio" id="userBio"><%= user.bio %></textarea>
         <br>
         <input type="submit" value="Update Bio">
     </form>

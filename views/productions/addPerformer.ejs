@@ -7,6 +7,7 @@
         <select name="performer">
             <%- performers.map(p => `<option value="${p._id}">${p.name}</option>`).join('') %>
         </select>
+        <br><br>
         <input type="submit" value="Add Castmember">
     </form>
 </main>

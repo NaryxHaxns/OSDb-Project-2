@@ -7,6 +7,9 @@ const performerSchema = new Schema({
         required: true,
         unique: true
     },
+    showimg: {
+        type: String
+    },
     born: {
         type: Date,
         required: true

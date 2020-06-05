@@ -11,16 +11,8 @@
         <label>Genre:</label>
         <input type="text" name="genre" value="<%= production.genre %>">
         <label>Synopsis:</label>
-        <textarea id="syn" name="synopsis"></textarea>
-        <label>Cast:</label>
-        <ul>
-            <% if(production.cast){ %>
-                <% production.cast.forEach(function(p){ %>
-                    <li class="castNames"><%= p.role %> - <%= p.performer.name %></li>
-                <% }) %>
-            <% } %>
-        </ul>
-        <br>
+        <textarea id="syn" name="synopsis"><%= production.synopsis %></textarea>
+        <br><br>
         <input type="submit" value="Edit Production">
     </form>
 </main>

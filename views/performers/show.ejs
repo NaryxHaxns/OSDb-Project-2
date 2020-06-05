@@ -2,8 +2,8 @@
 
 <main>
     <section>
-        <div class="catHeads">Name: </div>
-        <div><%= performer.name %></div>
+        <h2><%= performer.name %></h2>
+        <img class="pImg" src="<%= performer.showimg %>" alt="Performer Image">
         <div class="catHeads">Birthdate: </div>
         <div><%= performer.born %></div>
         <div class="catHeads">Bio: </div>
@@ -16,7 +16,6 @@
         </ul>
     </section>
     <% if (user){ %>
-    <a class="linkBtn" href="/performers/<%= performer._id %>/addRoll">Add a Role</a>
     <a class="linkBtn" href="/performers/<%= performer._id %>/edit">Edit Performer</a>
     <a class="linkBtn" href="/performers/<%= performer._id %>/remove">Delete Performer</a>
     <% } else {} %>
