@@ -1,6 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const castSchema = new Schema({
+    role: {
+        type: String,
+    },
+    performer: {
+        type: Schema.Types.ObjectId,
+        ref: 'Performer'
+    }
+})
+
 const productionSchema = new Schema({
     title: {
         type: String,
@@ -20,10 +30,7 @@ const productionSchema = new Schema({
     synopsis: {
         type: String
     },
-    cast: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Performer'
-    }],
+    cast: [castSchema],
     createdBy: {
         type: Schema.Types.ObjectId,
         ref: 'User'

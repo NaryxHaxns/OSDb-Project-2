@@ -25,7 +25,6 @@ function add(req,res){
 }
 
 function create(req,res){
-    console.log('this is the req.body', req.body)
     const s = req.body.born;
     req.body.born = `${s.substr(5, 2)}-${s.substr(8, 2)}-${s.substr(0, 4)}`;
     const performer = new Performer(req.body);
@@ -44,8 +43,8 @@ function show(req,res){
 function addRole(req,res){
     Performer.findById(req.params.id).populate('title').exec(function(err, performer){
         Production.find({_id: {$nin: performer.roles}}, function(err,productions){
-            res.render('performers/addRole', { title: 'OSDb: Online Stage Database - Add a Role', performer, productions })
         })
+        res.render('performers/addRole', { title: 'OSDb: Online Stage Database - Add a Role', performer, productions })
     })
 }
 

@@ -34,32 +34,34 @@ function create(req,res){
     req.body.createdBy = req.user._id;
     const production = new Production(req.body);
     production.save(function(err) {
-        console.log(production)
         if (err) return res.redirect('/productions/add')
         res.redirect('/')
     })
 };
 
 function show(req,res){
-    Production.findById(req.params.id).populate('cast').exec(function(err,production){
+    Production.findById(req.params.id).populate('cast.performer').exec(function(err,production){
             res.render('productions/show', { title: 'OSDb: Online Stage Database - Production', production })
     })
 };
 
 function addPerformer(req,res){
     Production.findById(req.params.id).populate('cast').exec(function(err, production){
-        Performer.find({_id: {$nin: production.cast}}, function(err, performers){
+        const castIds = production.cast.map(c => c._id);
+        Performer.find({_id: {$nin: castIds}}, function(err, performers){
             res.render('productions/addPerformer', { title: 'OSDb: Online Stage Database - Add Performer', production, performers })
         })
     })
 };
 
 function updateCast(req,res){
-    console.log('hitting')
     Production.findById(req.params.id, function(err,production){
         Performer.findOne({_id: req.body.performer}, function(err,performer){
-            console.log('this is the performer', performer)
-            production.cast.push(performer._id);
+            const newCast = {
+                role: req.body.role,
+                performer: performer._id
+            }
+            production.cast.push(newCast);
             production.save(function(err){
                 res.redirect(`/productions/${production._id}`);
             });
@@ -68,7 +70,7 @@ function updateCast(req,res){
 }
 
 function edit(req,res){
-    Production.findById(req.params.id, function(err, production){
+    Production.findById(req.params.id).populate('cast.performer').exec(function(err, production){
         res.render('productions/edit', { title: 'OSDb: Online Stage Database - Edit Production', production })
     })
 }

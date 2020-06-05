@@ -14,13 +14,10 @@
         <div><%= production.synopsis %></div>
         <div class="catHeads">Cast: </div>
         <ul>
-            <% console.log(production) %>
             <% if(production.cast){ %>
                 <% production.cast.forEach(function(p){ %>
-                    <li><%= p.name %></li>
+                    <li class="castNames"><%= p.role %> - <a class="pHeads" href="/performers/<%= p.performer._id %>"><%= p.performer.name %></a></li>
                 <% }) %>
-            <% } else { %>
-                <p>Please add to cast</p>
             <% } %>
         </ul>
     </section>

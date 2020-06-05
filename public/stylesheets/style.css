@@ -89,3 +89,7 @@ main {
 #syn {
   height: 50px;
 }
+
+.castNames {
+  list-style: none;
+}

@@ -3,7 +3,7 @@
 <main>
     <form action="/productions/<%= production._id %>/updateCast?_method=PUT" method="POST">
         <label>Role:</label>
-        <input type="text" value="Role">
+        <input type="text" name="role" value="Role">
         <select name="performer">
             <%- performers.map(p => `<option value="${p._id}">${p.name}</option>`).join('') %>
         </select>
