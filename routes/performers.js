@@ -4,20 +4,25 @@ const performersCtrl = require('../controllers/performers');
 
 router.get('/', performersCtrl.index);
 
-router.get('/add', performersCtrl.add);
+router.get('/add', isLoggedIn, performersCtrl.add);
 
 router.get('/:id', performersCtrl.show);
 
-router.get('/:id/addRole', performersCtrl.addRole)
+router.get('/:id/addRole', isLoggedIn, performersCtrl.addRole)
 
-router.get('/:id/edit', performersCtrl.edit);
+router.get('/:id/edit', isLoggedIn, performersCtrl.edit);
 
-router.get('/:id/remove', performersCtrl.remove);
+router.get('/:id/remove', isLoggedIn, performersCtrl.remove);
 
-router.post('/', performersCtrl.create);
+router.post('/', isLoggedIn, performersCtrl.create);
 
-router.delete('/:id', performersCtrl.deletePerf);
+router.delete('/:id', isLoggedIn, performersCtrl.deletePerf);
 
-router.put('/:id', performersCtrl.update);
+router.put('/:id', isLoggedIn, performersCtrl.update);
+
+function isLoggedIn(req, res, next) {
+    if ( req.isAuthenticated() ) return next();
+    res.redirect('/auth/google');
+  }
 
 module.exports = router;
