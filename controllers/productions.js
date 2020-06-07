@@ -1,5 +1,6 @@
 const Production = require('../models/production');
 const Performer = require('../models/performer');
+const User = require('../models/user');
 
 module.exports = {
     index,
@@ -41,7 +42,9 @@ function create(req,res){
 
 function show(req,res){
     Production.findById(req.params.id).populate('cast.performer').exec(function(err,production){
-        res.render('productions/show', { title: 'OSDb: Online Stage Database - Production', production })
+        User.find({_id: production.createdBy}, function(err,user){
+            res.render('productions/show', { title: 'OSDb: Online Stage Database - Production', production, user })
+        })
     })
 }
 

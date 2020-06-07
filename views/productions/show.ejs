@@ -26,6 +26,7 @@
         <a class="linkBtn" href="/productions/<%= production._id %>/edit">Edit Production</a><br>
         <a class="linkBtn" href="/productions/<%= production._id %>/remove">Delete Production</a><br>
     <% } else {} %>
+    <h5>Uploaded by <%= user[0].name %></h5>
 </main>
 
 <%- include('../partials/footer') %>
