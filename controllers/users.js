@@ -7,8 +7,12 @@ module.exports = {
 };
 
 function show(req,res){
-    User.findById(req.params.id, function(err,user,productions){
-        res.render('users/show', { title: 'OSDb: Online Stage Database - User', user: req.user });
+    let user = null;
+    if(req.user){
+        user = req.user;
+    }
+    User.findById(req.params.id, function(err,user, production){
+        res.render('users/show', { title: 'OSDb: Online Stage Database - User', user, production });
     });
 };
 

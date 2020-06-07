@@ -1,27 +1,26 @@
 <%- include('../partials/header') %>
 
 <main>
-    <h2>Performer Catalog</h2>
-    <table>
-        <thead>
-          <tr>
-            <th colspan="3">Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% performers.forEach(function(p) { %>
-            <tr>
-              <td>
-                <a class="pHeads" href="/performers/<%= p._id %>">
-                  <img class="idxImg" src="<%= p.showimg %>" alt="No Image"><br>
-                  <%= p.name %>
-                </a>
-              </td>
-            </tr>
-          <% }); %>
-        </tbody>
-      </table>
-    
+  <h2>Performer Catalog</h2>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="3">Name</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr id="perfTab">
+        <% performers.forEach(function(p) { %>
+          <td class="perfs">
+            <a class="pHeads" href="/performers/<%= p._id %>">
+              <img class="idxImg" src="<%= p.showimg %>" alt="No Image"><br>
+              <%= p.name %>
+            </a>
+          </td>
+        <% }); %>
+        </tr>
+      </tbody>
+    </table> 
 </main>
 
 <%- include('../partials/footer') %>

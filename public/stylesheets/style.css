@@ -90,6 +90,16 @@ main {
   border-radius: 5px;
 }
 
+#perfTab {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-items: center;
+}
+
+.perfs {
+  padding: 20px;
+}
+
 /* ^ Performer/Production ^ -- v User v */
 
 .avImg, .pImg {

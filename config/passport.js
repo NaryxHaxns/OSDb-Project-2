@@ -11,7 +11,14 @@ function(accessToken, refreshToken, profile, cb){
     User.findOne({ 'googleId': profile.id }, function(err,user){
         if(err) return cb(err);
         if(user){
-            return cb(null,user);
+            if(!user.avatar) {
+                user.avatar = profile.photos[0].value;
+                user.save(function(err) {
+                    return cb(null,user);
+                });
+            } else {
+                return cb(null,user);
+            }
         } else {
             const newUser = new User({
                 name: profile.displayName,
