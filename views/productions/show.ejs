@@ -7,7 +7,7 @@
         <div class="catHeads">Playwright: </div>
         <div><%= production.playwright %></div>
         <div class="catHeads">Debut: </div>
-        <div><%= production.debut %></div>
+        <div><%= production.debut.toLocaleDateString() %></div>
         <div class="catHeads">Genre: </div>
         <div><%= production.genre %></div>
         <div class="catHeads">Synopsis: </div>
@@ -22,9 +22,9 @@
         </ul>
     </section>
     <% if (user) { %>
-        <a class="linkBtn" href="/productions/<%= production._id %>/addPerformer">Add to Cast</a>
-        <a class="linkBtn" href="/productions/<%= production._id %>/edit">Edit Production</a>
-        <a class="linkBtn" href="/productions/<%= production._id %>/remove">Delete Production</a>
+        <a class="linkBtn" href="/productions/<%= production._id %>/addPerformer">Add to Cast</a><br>
+        <a class="linkBtn" href="/productions/<%= production._id %>/edit">Edit Production</a><br>
+        <a class="linkBtn" href="/productions/<%= production._id %>/remove">Delete Production</a><br>
     <% } else {} %>
 </main>
 

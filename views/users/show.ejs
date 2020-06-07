@@ -3,6 +3,7 @@
 <main>
     <div id="pFileHead">
         <h2><%= user.name %></h2>
+        <% console.log(user.avatar) %>
         <% if(user.avatar){ %>
         <img class="avImg" src="<%= user.avatar %>" alt="User Picture">
         <% } else { %>

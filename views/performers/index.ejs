@@ -5,13 +5,18 @@
     <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th colspan="3">Name</th>
           </tr>
         </thead>
         <tbody>
           <% performers.forEach(function(p) { %>
             <tr>
-              <td><a class="pHeads" href="/performers/<%= p._id %>"><%= p.name %></a></td>
+              <td>
+                <a class="pHeads" href="/performers/<%= p._id %>">
+                  <img class="idxImg" src="<%= p.showimg %>" alt="No Image"><br>
+                  <%= p.name %>
+                </a>
+              </td>
             </tr>
           <% }); %>
         </tbody>

@@ -7,7 +7,7 @@
     <a class="sortHeads" href="/?sortBy=title">Title</a>
     <a class="sortHeads" href="/?sortBy=genre">Genre</a>
   </div>
-  <table class="tabBdy">
+  <table>
     <thead>
       <tr>
         <th>Title</th>
@@ -18,7 +18,11 @@
     <tbody>
       <% productions.forEach(function(p) { %>
         <tr>
-          <td><a class="pHeads" href="/productions/<%= p._id %>"><%= p.title %></a></td>
+          <td>
+            <a class="pHeads" href="/productions/<%= p._id %>">
+              <img class="idxImg" src="<%= p.showimg %>" alt="No Image"><br>
+              <%= p.title %></a>
+          </td>
           <td><%= p.genre %></td>
         </tr>
       <% }); %>

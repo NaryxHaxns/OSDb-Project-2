@@ -5,7 +5,7 @@
         <h2><%= performer.name %></h2>
         <img class="pImg" src="<%= performer.showimg %>" alt="Performer Image">
         <div class="catHeads">Birthdate: </div>
-        <div><%= performer.born %></div>
+        <div><%= performer.born.toLocaleDateString() %></div>
         <div class="catHeads">Bio: </div>
         <div><%= performer.bio %></div>
         <div class="catHeads">Roles: </div>
@@ -16,7 +16,7 @@
         </ul>
     </section>
     <% if (user){ %>
-    <a class="linkBtn" href="/performers/<%= performer._id %>/edit">Edit Performer</a>
+    <a class="linkBtn" href="/performers/<%= performer._id %>/edit">Edit Performer</a><br>
     <a class="linkBtn" href="/performers/<%= performer._id %>/remove">Delete Performer</a>
     <% } else {} %>
 </main>

@@ -29,7 +29,7 @@ function create(req,res){
     req.body.playwright = req.body.playwright.replace(/\s*,\s*/g, ', ');
     req.body.genre = req.body.genre.replace(/\s*,\s*/g, ', ');
     for (let key in req.body) {
-      if (req.body[key] === '') delete req.body[key];
+        if (req.body[key] === '') delete req.body[key];
     }
     req.body.createdBy = req.user._id;
     const production = new Production(req.body);
@@ -41,7 +41,7 @@ function create(req,res){
 
 function show(req,res){
     Production.findById(req.params.id).populate('cast.performer').exec(function(err,production){
-            res.render('productions/show', { title: 'OSDb: Online Stage Database - Production', production })
+        res.render('productions/show', { title: 'OSDb: Online Stage Database - Production', production })
     })
 }
 
