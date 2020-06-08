@@ -34,10 +34,6 @@ const productionSchema = new Schema({
         type: String
     },
     cast: [castSchema],
-    createdBy: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    }
 }, {
     timestamps: true
 });
