@@ -1,6 +1,5 @@
 const Production = require('../models/production');
 const Performer = require('../models/performer');
-const User = require('../models/user');
 
 module.exports = {
     index,
