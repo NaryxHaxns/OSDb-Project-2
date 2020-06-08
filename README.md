@@ -64,9 +64,9 @@ ______________________________________________________________________
 
 Below are links to the *Trello Board* and to the *OSDb*. Enjoy!
 
-[Trello:](https://trello.com/b/MG7yqalH/osdb-project-2)
+[Trello](https://trello.com/b/MG7yqalH/osdb-project-2)
 
-[OSDb: Online Stage Database:](https://osdb-online-stage-database.herokuapp.com/)
+[OSDb: Online Stage Database](https://osdb-online-stage-database.herokuapp.com/)
 
 ______________________________________________________________________
 ## Next Steps
